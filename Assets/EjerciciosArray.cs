@@ -2,28 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EjerciciosArray : MonoBehaviour
-{
-    public GameObject[] cubitos;
 
-    // Start is called before the first frame update
+public class Ejercicio5 : MonoBehaviour
+{
+    public GameObject[] objetos;
+    private int index = 0;
+
     void Start()
     {
-       DesactivarPrimerElemento(cubitos);
+        foreach (GameObject obj in objetos) obj.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void DesactivarPrimerElemento(GameObject[] arr) {
-        if(arr.Lenght > 0) {
-        arr[0].SetActive(false);
-        } else {
-            Debug.Log()
+        if (Input.GetKeyDown(KeyCode.Space) && index < objetos.Length)
+        {
+            objetos[index].SetActive(true);
+            index++;
         }
     }
-
 }
