@@ -9,7 +9,7 @@ public GameObject[] objetos;
 
     void Start()
     {
-        // Desactiva todos los objetos al iniciar la escena
+        
         foreach (GameObject obj in objetos) obj.SetActive(false);
     }
 
@@ -17,13 +17,13 @@ public GameObject[] objetos;
     {
         if (Input.GetKeyDown(KeyCode.Space) && objetos.Length > 0)
         {
-            // Apaga el elemento actual para que haya solo uno activo a la vez
+           
             if (index >= 0) objetos[index].SetActive(false); 
             
-            // Avanza de posicion y reinicia al principio al llegar al final
+            
             index = (index + 1) % objetos.Length;           
             
-            // Activa el nuevo elemento
+           
             objetos[index].SetActive(true);                  
         }
     }
